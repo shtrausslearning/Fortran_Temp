@@ -10,15 +10,17 @@ integer, dimension(mpi_status_size) :: stat
 integer, dimension(5) :: array
 integer, parameter :: sender = 0, receiver = 1
 
-call mpi_init(ierr)
-call mpi_comm_rank(mpi_comm_world, nproc, ierr)
-call mpi_comm_size(mpi_comm_world, procsize, ierr)
+call mpi_init(ierr)  ! Initialise MPI
+call mpi_comm_rank(mpi_comm_world, nproc, ierr) ! Whist processor number
+call mpi_comm_size(mpi_comm_world, procsize, ierr) ! How many total processes
 
+! # shutdown if not @2cpu
 if (procsize /= 2) then
   call mpi_finalize(ierr)
   stop 'Error: This program must be run on 2 parallel processes'
 end if
 
+! Initialise arrays on sending & receiving
 if (nproc == sender) then
   array = [1, 2, 3, 4, 5]
 else
