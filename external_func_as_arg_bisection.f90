@@ -10,6 +10,7 @@ eps = 1.0e-6
 
 write (*,100)
 
+! function passed as argument into subroutine
 call bisection(f,x1,x2,eps,root,flag)
 
 if(flag == 0) then 
