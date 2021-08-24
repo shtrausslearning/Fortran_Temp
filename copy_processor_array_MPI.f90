@@ -1,4 +1,5 @@
 ! @source : https://livebook.manning.com/book/modern-fortran/chapter-1/v-9/121
+! Copying an array from one processor to another
 
 program array_copy_mpi
 use mpi
@@ -30,6 +31,7 @@ end if
 write(*,'(a,i1,a,5(4x,i2))')'array on proc ', nproc,&
   ' before copy:', array
 
+! Wait for both processes == openmp's $OMP BARRIER
 call mpi_barrier(mpi_comm_world, ierr)
 
 if (nproc == sender) then
