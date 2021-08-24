@@ -1,8 +1,8 @@
 program main
 implicit none
-double precision f,x1,x2,root,eps
-integer flag
-external f     ! outside function
+double precision :: f,x1,x2,root,eps
+integer :: flag
+external :: f     ! outside function
 
 x1 = -10.0
 x2 =  10.0
@@ -11,7 +11,7 @@ eps = 1.0e-6
 write (*,100)
 
 ! function passed as argument into subroutine
-call bisection(f,x1,x2,eps,root,flag)
+call bisection(g,x1,x2,eps,root,flag)
 
 if(flag == 0) then 
   write(*,104)
@@ -37,6 +37,14 @@ write(*,105) f(Root)
 103 format(' Singularity = ',1pe12.5)
 104 format(' no roots for Bisectional method')
 105 format(' f(root)     = ',1pe12.5)
+
+contains 
+
+! Internal Function, define type
+double precision function g(x)
+double precision, intent(in) :: x
+  g = x + cos(x)
+end function g
 
 end program main
 
