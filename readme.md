@@ -3,3 +3,4 @@ Fortran Reference:
 - https://www.netlib.org/blas/ BLAS Library
 - https://developer.nvidia.com/hpc-compilers NVIDA HPC
 - https://curc.readthedocs.io/en/latest/programming/OpenMP-Fortran.html openMP examples
+- http://www.cs.rpi.edu/~szymansk/OOF90/bugs.html Common Fortran Mistakes
