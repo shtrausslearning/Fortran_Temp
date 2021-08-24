@@ -1,7 +1,7 @@
 !@ source https://numpy.org/devdocs/f2py/python-usage.html#call-back-arguments
 ! Accessing/Utilising Fortran Content from Python via wrapper
 
-! Fortran 77 
+! (1) Fortran file
 C FILE: FTYPE.F
       SUBROUTINE FOO(N)
       INTEGER N
@@ -14,7 +14,7 @@ C END OF FTYPE.F
 
 ! (2) Make Wrapper : f2py -c ftype.f -m ftype.
 
-! In Python 
+! (3) Use Python 
 import ftype  ! Import created file
 print(ftype.__doc__)
 !@output:
