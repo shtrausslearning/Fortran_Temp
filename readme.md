@@ -4,3 +4,4 @@ Fortran Reference:
 - https://developer.nvidia.com/hpc-compilers NVIDA HPC
 - https://curc.readthedocs.io/en/latest/programming/OpenMP-Fortran.html openMP examples
 - http://www.cs.rpi.edu/~szymansk/OOF90/bugs.html Common Fortran Mistakes
+- http://adl.stanford.edu/cme342/Lecture_Notes_files/Lecture17-12.pdf CUDA + Fortran
