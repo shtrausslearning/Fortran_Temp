@@ -45,7 +45,7 @@ call mpi_finalize(ierr)
 
 end program array_copy_mpi
 
-@output
+! @output
 ! array on proc 0 before copy:     1     2     3     4     5
 ! array on proc 1 before copy:     0     0     0     0     0
 ! array on proc 0 after copy:      1     2     3     4     5
